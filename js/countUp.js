@@ -1,1 +1,246 @@
-var __assign=this&&this.__assign||function(){return(__assign=Object.assign||function(t){for(var i,a=1,s=arguments.length;a<s;a++)for(var n in i=arguments[a])Object.prototype.hasOwnProperty.call(i,n)&&(t[n]=i[n]);return t}).apply(this,arguments)},CountUp=function(){function t(t,i,a){var s=this;this.target=t,this.endVal=i,this.options=a,this.version="2.0.5",this.defaults={startVal:0,decimalPlaces:0,duration:2,useEasing:!0,useGrouping:!0,smartEasingThreshold:999,smartEasingAmount:333,separator:",",decimal:".",prefix:"",suffix:""},this.finalEndVal=null,this.useEasing=!0,this.countDown=!1,this.error="",this.startVal=0,this.paused=!0,this.count=function(t){s.startTime||(s.startTime=t);var i=t-s.startTime;s.remaining=s.duration-i,s.useEasing?s.countDown?s.frameVal=s.startVal-s.easingFn(i,0,s.startVal-s.endVal,s.duration):s.frameVal=s.easingFn(i,s.startVal,s.endVal-s.startVal,s.duration):s.countDown?s.frameVal=s.startVal-(s.startVal-s.endVal)*(i/s.duration):s.frameVal=s.startVal+(s.endVal-s.startVal)*(i/s.duration),s.countDown?s.frameVal=s.frameVal<s.endVal?s.endVal:s.frameVal:s.frameVal=s.frameVal>s.endVal?s.endVal:s.frameVal,s.frameVal=Math.round(s.frameVal*s.decimalMult)/s.decimalMult,s.printValue(s.frameVal),i<s.duration?s.rAF=requestAnimationFrame(s.count):null!==s.finalEndVal?s.update(s.finalEndVal):s.callback&&s.callback()},this.formatNumber=function(t){var i,a,n,e,r,o=t<0?"-":"";if(i=Math.abs(t).toFixed(s.options.decimalPlaces),n=(a=(i+="").split("."))[0],e=a.length>1?s.options.decimal+a[1]:"",s.options.useGrouping){r="";for(var l=0,h=n.length;l<h;++l)0!==l&&l%3==0&&(r=s.options.separator+r),r=n[h-l-1]+r;n=r}return s.options.numerals&&s.options.numerals.length&&(n=n.replace(/[0-9]/g,function(t){return s.options.numerals[+t]}),e=e.replace(/[0-9]/g,function(t){return s.options.numerals[+t]})),o+s.options.prefix+n+e+s.options.suffix},this.easeOutExpo=function(t,i,a,s){return a*(1-Math.pow(2,-10*t/s))*1024/1023+i},this.options=__assign(__assign({},this.defaults),a),this.formattingFn=this.options.formattingFn?this.options.formattingFn:this.formatNumber,this.easingFn=this.options.easingFn?this.options.easingFn:this.easeOutExpo,this.startVal=this.validateValue(this.options.startVal),this.frameVal=this.startVal,this.endVal=this.validateValue(i),this.options.decimalPlaces=Math.max(this.options.decimalPlaces),this.decimalMult=Math.pow(10,this.options.decimalPlaces),this.resetDuration(),this.options.separator=String(this.options.separator),this.useEasing=this.options.useEasing,""===this.options.separator&&(this.options.useGrouping=!1),this.el="string"==typeof t?document.getElementById(t):t,this.el?this.printValue(this.startVal):this.error="[CountUp] target is null or undefined"}return t.prototype.determineDirectionAndSmartEasing=function(){var t=this.finalEndVal?this.finalEndVal:this.endVal;this.countDown=this.startVal>t;var i=t-this.startVal;if(Math.abs(i)>this.options.smartEasingThreshold){this.finalEndVal=t;var a=this.countDown?1:-1;this.endVal=t+a*this.options.smartEasingAmount,this.duration=this.duration/2}else this.endVal=t,this.finalEndVal=null;this.finalEndVal?this.useEasing=!1:this.useEasing=this.options.useEasing},t.prototype.start=function(t){this.error||(this.callback=t,this.duration>0?(this.determineDirectionAndSmartEasing(),this.paused=!1,this.rAF=requestAnimationFrame(this.count)):this.printValue(this.endVal))},t.prototype.pauseResume=function(){this.paused?(this.startTime=null,this.duration=this.remaining,this.startVal=this.frameVal,this.determineDirectionAndSmartEasing(),this.rAF=requestAnimationFrame(this.count)):cancelAnimationFrame(this.rAF),this.paused=!this.paused},t.prototype.reset=function(){cancelAnimationFrame(this.rAF),this.paused=!0,this.resetDuration(),this.startVal=this.validateValue(this.options.startVal),this.frameVal=this.startVal,this.printValue(this.startVal)},t.prototype.update=function(t){cancelAnimationFrame(this.rAF),this.startTime=null,this.endVal=this.validateValue(t),this.endVal!==this.frameVal&&(this.startVal=this.frameVal,this.finalEndVal||this.resetDuration(),this.determineDirectionAndSmartEasing(),this.rAF=requestAnimationFrame(this.count))},t.prototype.printValue=function(t){var i=this.formattingFn(t);"INPUT"===this.el.tagName?this.el.value=i:"text"===this.el.tagName||"tspan"===this.el.tagName?this.el.textContent=i:this.el.innerHTML=i},t.prototype.ensureNumber=function(t){return"number"==typeof t&&!isNaN(t)},t.prototype.validateValue=function(t){var i=Number(t);return this.ensureNumber(i)?i:(this.error="[CountUp] invalid start or end value: "+t,null)},t.prototype.resetDuration=function(){this.startTime=null,this.duration=1e3*Number(this.options.duration),this.remaining=this.duration},t}();export{CountUp};
+/*
+
+	countUp.js
+	by @inorganik
+
+*/
+
+// target = id of html element or var of previously selected html element where counting occurs
+// startVal = the value you want to begin at
+// endVal = the value you want to arrive at
+// decimals = number of decimal places, default 0
+// duration = duration of animation in seconds, default 2
+// options = optional object of options (see below)
+
+var CountUp = function(target, startVal, endVal, decimals, duration, options) {
+
+	var self = this;
+	self.version = function () { return '1.9.3'; };
+	
+	// default options
+	self.options = {
+		useEasing: true, // toggle easing
+		useGrouping: true, // 1,000,000 vs 1000000
+		separator: ',', // character to use as a separator
+		decimal: '.', // character to use as a decimal
+		easingFn: easeOutExpo, // optional custom easing function, default is Robert Penner's easeOutExpo
+		formattingFn: formatNumber, // optional custom formatting function, default is formatNumber above
+		prefix: '', // optional text before the result
+		suffix: '', // optional text after the result
+		numerals: [] // optionally pass an array of custom numerals for 0-9
+	};
+
+	// extend default options with passed options object
+	if (options && typeof options === 'object') {
+		for (var key in self.options) {
+			if (options.hasOwnProperty(key) && options[key] !== null) {
+				self.options[key] = options[key];
+			}
+		}
+	}
+
+	if (self.options.separator === '') {
+		self.options.useGrouping = false;
+	}
+	else {
+		// ensure the separator is a string (formatNumber assumes this)
+		self.options.separator = '' + self.options.separator;
+	}
+
+	// make sure requestAnimationFrame and cancelAnimationFrame are defined
+	// polyfill for browsers without native support
+	// by Opera engineer Erik Möller
+	var lastTime = 0;
+	var vendors = ['webkit', 'moz', 'ms', 'o'];
+	for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+		window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+		window.cancelAnimationFrame = window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+	}
+	if (!window.requestAnimationFrame) {
+		window.requestAnimationFrame = function(callback, element) {
+			var currTime = new Date().getTime();
+			var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+			var id = window.setTimeout(function() { callback(currTime + timeToCall); }, timeToCall);
+			lastTime = currTime + timeToCall;
+			return id;
+		};
+	}
+	if (!window.cancelAnimationFrame) {
+		window.cancelAnimationFrame = function(id) {
+			clearTimeout(id);
+		};
+	}
+
+	function formatNumber(num) {
+		var neg = (num < 0),
+        	x, x1, x2, x3, i, len;
+		num = Math.abs(num).toFixed(self.decimals);
+		num += '';
+		x = num.split('.');
+		x1 = x[0];
+		x2 = x.length > 1 ? self.options.decimal + x[1] : '';
+		if (self.options.useGrouping) {
+			x3 = '';
+			for (i = 0, len = x1.length; i < len; ++i) {
+				if (i !== 0 && ((i % 3) === 0)) {
+					x3 = self.options.separator + x3;
+				}
+				x3 = x1[len - i - 1] + x3;
+			}
+			x1 = x3;
+		}
+		// optional numeral substitution
+		if (self.options.numerals.length) {
+			x1 = x1.replace(/[0-9]/g, function(w) {
+				return self.options.numerals[+w];
+			})
+			x2 = x2.replace(/[0-9]/g, function(w) {
+				return self.options.numerals[+w];
+			})
+		}
+		return (neg ? '-' : '') + self.options.prefix + x1 + x2 + self.options.suffix;
+	}
+	// Robert Penner's easeOutExpo
+	function easeOutExpo(t, b, c, d) {
+		return c * (-Math.pow(2, -10 * t / d) + 1) * 1024 / 1023 + b;
+	}
+	function ensureNumber(n) {
+		return (typeof n === 'number' && !isNaN(n));
+	}
+
+	self.initialize = function() { 
+		if (self.initialized) return true;
+		
+		self.error = '';
+		self.d = (typeof target === 'string') ? document.getElementById(target) : target;
+		if (!self.d) { 
+			self.error = '[CountUp] target is null or undefined'
+			return false;
+		}
+		self.startVal = Number(startVal);
+		self.endVal = Number(endVal);
+		// error checks
+		if (ensureNumber(self.startVal) && ensureNumber(self.endVal)) {
+			self.decimals = Math.max(0, decimals || 0);
+			self.dec = Math.pow(10, self.decimals);
+			self.duration = Number(duration) * 1000 || 2000;
+			self.countDown = (self.startVal > self.endVal);
+			self.frameVal = self.startVal;
+			self.initialized = true;
+			return true;
+		}
+		else {
+			self.error = '[CountUp] startVal ('+startVal+') or endVal ('+endVal+') is not a number';
+			return false;
+		}
+	};
+
+	// Print value to target
+	self.printValue = function(value) {
+		var result = self.options.formattingFn(value);
+
+		if (self.d.tagName === 'INPUT') {
+			this.d.value = result;
+		}
+		else if (self.d.tagName === 'text' || self.d.tagName === 'tspan') {
+			this.d.textContent = result;
+		}
+		else {
+			this.d.innerHTML = result;
+		}
+	};
+
+	self.count = function(timestamp) {
+
+		if (!self.startTime) { self.startTime = timestamp; }
+
+		self.timestamp = timestamp;
+		var progress = timestamp - self.startTime;
+		self.remaining = self.duration - progress;
+
+		// to ease or not to ease
+		if (self.options.useEasing) {
+			if (self.countDown) {
+				self.frameVal = self.startVal - self.options.easingFn(progress, 0, self.startVal - self.endVal, self.duration);
+			} else {
+				self.frameVal = self.options.easingFn(progress, self.startVal, self.endVal - self.startVal, self.duration);
+			}
+		} else {
+			if (self.countDown) {
+				self.frameVal = self.startVal - ((self.startVal - self.endVal) * (progress / self.duration));
+			} else {
+				self.frameVal = self.startVal + (self.endVal - self.startVal) * (progress / self.duration);
+			}
+		}
+
+		// don't go past endVal since progress can exceed duration in the last frame
+		if (self.countDown) {
+			self.frameVal = (self.frameVal < self.endVal) ? self.endVal : self.frameVal;
+		} else {
+			self.frameVal = (self.frameVal > self.endVal) ? self.endVal : self.frameVal;
+		}
+
+		// decimal
+		self.frameVal = Math.round(self.frameVal*self.dec)/self.dec;
+
+		// format and print value
+		self.printValue(self.frameVal);
+
+		// whether to continue
+		if (progress < self.duration) {
+			self.rAF = requestAnimationFrame(self.count);
+		} else {
+			if (self.callback) self.callback();
+		}
+	};
+	// start your animation
+	self.start = function(callback) {
+		if (!self.initialize()) return;
+		self.callback = callback;
+		self.rAF = requestAnimationFrame(self.count);
+	};
+	// toggles pause/resume animation
+	self.pauseResume = function() {
+		if (!self.paused) {
+			self.paused = true;
+			cancelAnimationFrame(self.rAF);
+		} else {
+			self.paused = false;
+			delete self.startTime;
+			self.duration = self.remaining;
+			self.startVal = self.frameVal;
+			requestAnimationFrame(self.count);
+		}
+	};
+	// reset to startVal so animation can be run again
+	self.reset = function() {
+		self.paused = false;
+		delete self.startTime;
+		self.initialized = false;
+		if (self.initialize()) {
+			cancelAnimationFrame(self.rAF);
+			self.printValue(self.startVal);
+		}
+	};
+	// pass a new endVal and start animation
+	self.update = function (newEndVal) {
+		if (!self.initialize()) return;
+		newEndVal = Number(newEndVal);
+		if (!ensureNumber(newEndVal)) {
+			self.error = '[CountUp] update() - new endVal is not a number: '+newEndVal;
+			return;
+		}
+		self.error = '';
+		if (newEndVal === self.frameVal) return;
+		cancelAnimationFrame(self.rAF);
+		self.paused = false;
+		delete self.startTime;
+		self.startVal = self.frameVal;
+		self.endVal = newEndVal;
+		self.countDown = (self.startVal > self.endVal);
+		self.rAF = requestAnimationFrame(self.count);
+	};
+
+	// format startVal on initialization
+	if (self.initialize()) self.printValue(self.startVal);
+};
