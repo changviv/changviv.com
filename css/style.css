@@ -77,13 +77,13 @@ body {
   font-size: 15px;
 }
 
-.btnColor, .skillSection {
+.btnColor,
+.skillSection,
+.contactSection {
   background-color: #e74c3c;
-}
-
-.skillSection {
   color: #fff;
 }
+
 
 .skill {
   text-align: center;
@@ -177,5 +177,6 @@ at the top of the square contaner in skills
   top: -30px;
   left: 33%;
   width: 34%;
-  color: #e74c3c;;
+  color: #444;
+  /*color: #e74c3c;;*/
 }
