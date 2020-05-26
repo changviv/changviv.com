@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" type="text/css" href="css/superslides.css">
     <link rel="stylesheet" type="text/css" href="css/owl.carousel.min.css">
     <link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
@@ -38,6 +39,29 @@
       </nav>
     </div>
 
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <section id="aboutme" class="section">
       <div class="container">
         <div class="row">
@@ -52,7 +76,7 @@
             kind of noodles (ramen, pasta, garlic noodles) you name it!</p>
             <p>
 
-            <a class="btn btn-danger btnColor" href="img/vivienchang_resume.pdf" role="button">View Resume</a>
+            <a target="_blank" class="btn btn-danger btnColor" href="img/vivienchang_resume.pdf" role="button">View Resume</a>
           </div>
         </div>
       </div>
@@ -180,14 +204,198 @@
 
     <section id='contact' class="contactSection section">
       <div class="col-md-12 text-center">
-        <p class="subHeading">Let's get in touch!</p>
-          <h2>I'd love to hear from you!</h2>
-          <a href="mailTo:vchang103@gmail.com">EMAIL ME</a>
+        <p class="contact--subHeading">Let's get in touch</p>
+          <h2 class='contact--main'>I'd love to hear from you!</h2>
+          <a href="mailTo:vchang103@gmail.com" class='contactButton'>EMAIL ME</a>
       </div>
     </section>
 
+    <section id="portfolio" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="portfolio-heading">
+            <h2>Portfolio</h2>
+          </div>
+          <div class="filter">
+            <ul id="filters">
+              <li><a href="#" data-filter="*" class="current">All</a></li>
+              <li><a href="#" data-filter=".apps">Full Stack</a></li>
+              <li><a href="#" data-filter=".front">Front</a></li>
+              <li><a href="#" data-filter=".back">Back</a></li>
+            </ul>
+          </div>
+
+
+          <div class="portfolio--container">
+            <ul class="portfolio--container-items">
+              <li onClick="" class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img  class="portfolio-img" src="img/portfolio/thumbnail/me_zoe_tbn.jpg" alt="">
+                  <div class="portfolio--icons">
+                    <a data-fancybox data-caption="Zoe and Me" href="img/portfolio/me_zoe.jpg" title='View Image' class='openImage'>
+                      <i class="fas fa-search"></i>
+                    </a>
+                    <a href="" taget="_blank" class='projectLink'>
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+
+                  <div class="imageOverlay"></div>
+                </div>
+              </li>
+
+              <li onClick="" class="front col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img class="portfolio-img" src="img/portfolio/thumbnail/me_zoe_tbn.jpg" alt="">
+                  <div class="portfolio--icons">
+                    <a data-fancybox data-caption="Zoe and Me" href="img/portfolio/me_zoe.jpg" title='View Image' class='openImage'>
+                      <i class="fas fa-search"></i>
+                    </a>
+                    <a href="" taget="_blank" class='projectLink'>
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                  <div class="imageOverlay"></div>
+                </div>
+              </li>
+
+
+              <li onClick="" class="back col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img class="portfolio-img" src="img/portfolio/thumbnail/me_zoe_tbn.jpg" alt="">
+                  <div class="portfolio--icons">
+                    <a data-fancybox data-caption="Zoe and Me" href="img/portfolio/me_zoe.jpg" title='View Image' class='openImage'>
+                      <i class="fas fa-search"></i>
+                    </a>
+                    <a href="" taget="_blank" class='projectLink'>
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                  <div class="imageOverlay"></div>
+                </div>
+              </li>
+
+              <li onClick="" class="back col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img class="portfolio-img" src="img/portfolio/thumbnail/me_zoe_tbn.jpg" alt="">
+                  <div class="portfolio--icons">
+                    <a data-fancybox data-caption="Zoe and Me" href="img/portfolio/me_zoe.jpg" title='View Image' class='openImage'>
+                      <i class="fas fa-search"></i>
+                    </a>
+                    <a href="" taget="_blank" class='projectLink'>
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                  <div class="imageOverlay"></div>
+                </div>
+              </li>
+
+              <li onClick="" class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img class="portfolio-img" src="img/portfolio/thumbnail/me_zoe_tbn.jpg" alt="">
+                  <div class="portfolio--icons">
+                    <a data-fancybox data-caption="Zoe and Me" href="img/portfolio/me_zoe.jpg" title='View Image' class='openImage'>
+                      <i class="fas fa-search"></i>
+                    </a>
+                    <a href="" taget="_blank" class='projectLink'>
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                  <div class="imageOverlay"></div>
+                </div>
+              </li>
+
+              <li onClick="" class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img  class="portfolio-img" src="img/portfolio/thumbnail/me_zoe_tbn.jpg" alt="">
+                  <div class="portfolio--icons">
+                    <a data-fancybox data-caption="Zoe and Me" href="img/portfolio/me_zoe.jpg" title='View Image' class='openImage'>
+                      <i class="fas fa-search"></i>
+                    </a>
+                    <a href="" taget="_blank" class='projectLink'>
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+
+                  <div class="imageOverlay"></div>
+                </div>
+              </li>
+
+              <li onClick="" class="front col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img class="portfolio-img" src="img/portfolio/thumbnail/me_zoe_tbn.jpg" alt="">
+                  <div class="portfolio--icons">
+                    <a data-fancybox data-caption="Zoe and Me" href="img/portfolio/me_zoe.jpg" title='View Image' class='openImage'>
+                      <i class="fas fa-search"></i>
+                    </a>
+                    <a href="" taget="_blank" class='projectLink'>
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                  <div class="imageOverlay"></div>
+                </div>
+              </li>
+
+
+              <li onClick="" class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img class="portfolio-img" src="img/portfolio/thumbnail/me_zoe_tbn.jpg" alt="">
+                  <div class="portfolio--icons">
+                    <a data-fancybox data-caption="Zoe and Me" href="img/portfolio/me_zoe.jpg" title='View Image' class='openImage'>
+                      <i class="fas fa-search"></i>
+                    </a>
+                    <a href="" taget="_blank" class='projectLink'>
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                  <div class="imageOverlay"></div>
+                </div>
+              </li>
+
+              <li onClick="" class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img class="portfolio-img" src="img/portfolio/thumbnail/me_zoe_tbn.jpg" alt="">
+                  <div class="portfolio--icons">
+                    <a data-fancybox data-caption="Zoe and Me" href="img/portfolio/me_zoe.jpg" title='View Image' class='openImage'>
+                      <i class="fas fa-search"></i>
+                    </a>
+                    <a href="" taget="_blank" class='projectLink'>
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                  <div class="imageOverlay"></div>
+                </div>
+              </li>
+
+              <li onClick="" class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="item">
+                  <img class="portfolio-img" src="img/portfolio/thumbnail/me_zoe_tbn.jpg" alt="">
+                  <div class="portfolio--icons">
+                    <a data-fancybox data-caption="Zoe and Me" href="img/portfolio/me_zoe.jpg" title='View Image' class='openImage'>
+                      <i class="fas fa-search"></i>
+                    </a>
+                    <a href="" taget="_blank" class='projectLink'>
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                  <div class="imageOverlay"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="copyright">
+      <div class="col-md-12 text-center">
+        <p>&copy; Vivien Chang 2020</p>
+      </div>
+    </div>
+
  
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="js/countUp.js"></script>
     <script src="js/countUp-jquery.js"></script>
     <script src="js/jquery.superslides.min.js"></script>
@@ -197,6 +405,7 @@
     <script src="js/typed.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script text="text/javascript" src="https://unpkg.com/isotope-layout@3.0.6/dist/isotope.pkgd.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

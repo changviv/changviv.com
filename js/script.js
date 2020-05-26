@@ -70,4 +70,32 @@ $(document).ready(function() {
     }
 
   });
+
+  $('[data-fancybox]').fancybox();
+
+  $('.portfolio--container-items').isotope({
+    filter: '*',
+    animationOptions: {
+      duration: 1500,
+      easing: 'linar',
+      queue: false
+    }
+  })
+
+  $("#filters a").click(function() {
+    $("#filters .current").removeClass('current')
+    $(this).addClass("current")
+
+    var selector = $(this).attr('data-filter')
+    $('.portfolio--container-items').isotope({
+      filter: selector,
+      animationOptions: {
+        duration: 1500,
+        easing: 'linar',
+        queue: false
+      }
+    })
+
+    return false;
+  })
 });
