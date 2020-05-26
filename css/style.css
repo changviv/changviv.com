@@ -350,3 +350,34 @@ at the top of the square contaner in skills
 .copyright p {
   margin: 0;
 }
+
+#navigation {
+  background-color: #e74c3c;
+  padding: 20px 10px;
+  z-index: 100;
+  width: 100%;
+}
+
+#navigation li {
+  padding: 0px 10px;
+}
+
+#navigation li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-brand,
+.navbar-brand:hover {
+  color: #fff;
+}
+
+.navbar-toggler-icon {
+  background: url('../img/icons/menu.svg');
+  background-size: 100%;
+}
+
+.fixedNav #navigation {
+  position: fixed;
+  top: 0;
+}
