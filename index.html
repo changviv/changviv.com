@@ -12,13 +12,14 @@
     <link rel="stylesheet" type="text/css" href="css/owl.theme.default.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,300;0,400;1,400&family=Raleway:wght@200;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+<!--     <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Vivien Chang</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <body>
     <div id="slides">
-      <div class="slides--overlay"></div>
+      <div class="slides-overlay"></div>
       <div class="slides-container">
         <img src="img/photo1.jpg" alt="">
         <img src="img/photo2.jpg" alt="">
@@ -66,28 +67,31 @@
       <div class="container">
         <div class="row">
           <div class="col-md-5">
-            <img src="img/me_japan.JPG" class="about--image" alt="">
+            <img src="img/me_japan.JPG" class="section-about__img" alt="">
           </div>
-          <div class="about--blurb col-md-7">
-            <h3 class="about--blurb-main">My name is Vivien Chang</h3>
-            <p class="about--blurb-sub">Hey there! I'm Vivien from San Francisco, California. I'm a self-taught software engineer. I don't have the most linear path to becoming an engineer - I graduated with a BS in Business Administration from USC and I previously worked as an EMT and account excutive before making the switch. I have three years of experience in Python and Javascript and am passionate about building innovative technology that brings people together.
+          <div class="section-about__blurb col-md-7">
+            <h3 class="section-about__blurb-main">My name is Vivien Chang</h3>
+            <p class="section-about__blurb-sub">Hey there! I'm Vivien from San Francisco, California. I'm a self-taught software engineer. I don't have the most linear path to becoming an engineer - I graduated with a BS in Business Administration from USC and I previously worked as an EMT and account excutive before making the switch. I have three years of experience in Python and Javascript and am passionate about building innovative technology that brings people together.
             </p>
-            <p class="about--blurb-sub">When I'm not coding I love to travel during the offseason at egregiously cheap prices. I love to rockclimb, currently at a V3 working on getting to V4. And I love any
+            <p class="section-about__blurb-sub">When I'm not coding I love to travel during the offseason at egregiously cheap prices. I love to rockclimb, currently at a V3 working on getting to V4. And I love any
             kind of noodles (ramen, pasta, garlic noodles) you name it!</p>
             <p>
 
-            <a target="_blank" class="btn btn-danger btnColor" href="img/vivienchang_resume.pdf" role="button">View Resume</a>
+            <a target="_blank" class="button button-resume" href="img/vivienchang_resume.pdf" role="button">View Resume</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="skillSection section">
+    <section id="skills" class="section-skill section">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h2 class="skills-heading-main">Technical Skills</h2>
-            <p class="skills-heading-sub">A representation of my proficiency in skills</p>
+            <div class="skills-heading">
+              <h2 class="skills-heading__main">Technical Skills</h2>
+              <p class="skills-heading__sub">A representation of my proficiency in skills</p>
+            </div>
+            
 
             <div class="owl-carousel owl-theme">
               <div class="skill">
@@ -202,11 +206,11 @@
       </div>
     </section>
 
-    <section id='contact' class="contactSection section">
+    <section id='contact' class="section-contact section">
       <div class="col-md-12 text-center">
-        <p class="contact--subHeading">Let's get in touch</p>
-          <h2 class='contact--main'>I'd love to hear from you!</h2>
-          <a href="mailTo:vchang103@gmail.com" class='contactButton'>EMAIL ME</a>
+        <p class="contact-subHeading">Let's get in touch</p>
+          <h2 class='contact-main'>I'd love to hear from you!</h2>
+          <a href="mailTo:vchang103@gmail.com" class='button button-contact'>EMAIL ME</a>
       </div>
     </section>
 
@@ -226,8 +230,8 @@
           </div>
 
 
-          <div class="portfolio--container">
-            <ul class="portfolio--container-items">
+          <div class="portfolio-container">
+            <ul class="portfolio-container-items">
               <li onClick="" class="apps col-xs-6 col-sm-4 col-md-3 col-lg-3">
                 <div class="item">
                   <img  class="portfolio-img" src="img/portfolio/thumbnail/me_zoe_tbn.jpg" alt="">

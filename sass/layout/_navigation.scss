@@ -1,0 +1,43 @@
+#navigation {
+  background-color: $color-primary;
+  padding: 20px 10px;
+  z-index: 100;
+  width: 100%;
+
+  & li {
+    padding: 0px 10px;
+    & a {
+      color: $text-color-light;
+      text-decoration: none;
+    }
+  } 
+}
+
+.navbar {
+  &-brand {
+    color: $text-color-light;
+    font-size: $font-size-large;
+    font-weight: $font-heavy;
+    padding-left: 20px;
+    &:hover {
+      color: $text-color-light;
+    }
+  }
+
+  &-toggler-icon {
+    background: url('../img/icons/menu.svg');
+    background-size: 100%;
+    height: $font-size-xlarge;
+    width: $font-size-xlarge; 
+  }
+  & ul li a {
+    font-size: $default-font-size;
+    text-transform: uppercase;
+  }
+}
+
+
+.fixedNav #navigation {
+  position: fixed;
+  top: 0;
+}

@@ -1,0 +1,49 @@
+.section {
+  padding: 100px 0;
+
+  &-about {
+    &__img {
+      max-width: 100%;
+    }
+
+    &__blurb {
+      &-main {
+        font-size: $font-size-xlarge;
+      }
+
+      &-sub {
+        font-size: $default-font-size;
+      }
+    }
+  }
+  
+  &-skill, &-contact {
+    background-color: $color-primary;
+    color: $text-color-light;
+  }
+
+}
+
+.chart {
+  position: relative;
+  width: 152px;
+  height: 152px;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 15px;
+
+  & canvas {
+    @include absCenter;
+  }
+
+  & .percent {
+    line-height: 152px;
+    color: $color-dark;
+    display: inline-block;
+    font-size: $font-size-xlarge;
+
+    &:after {
+      content: '%';
+    }
+  }
+}

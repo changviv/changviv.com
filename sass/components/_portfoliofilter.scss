@@ -1,0 +1,42 @@
+.filter a {
+  color: #7f8c8d;
+  border: 1px solid #7f8c8d;
+  padding: 15px 20px;
+  display: block;
+  text-decoration: none;
+}
+
+.filter li {
+  display: inline-block;
+  padding: 5px;
+}
+
+.filter .current {
+  background-color: #e74c3c;
+  border: 1px solid #e74c3c;
+  color: #fff;
+}
+
+.filter {
+  text-align: center;
+  width: 100%;
+
+  & a {
+    color: $color-grey;
+    border: 1px solid $color-grey;
+    padding: 15px 20px;
+    display: block;
+    text-decoration: none;
+  }
+
+  & li {
+    display: inline-block;
+    padding: 5px;
+  }
+
+  & .current {
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+    color: $text-color-light;
+  }
+}

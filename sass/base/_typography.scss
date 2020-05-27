@@ -1,0 +1,68 @@
+body {
+  font-size: $default-font-size;
+  color: $text-color-dark;
+  background-color: $color-light;
+  letter-spacing: 1px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: $font-medium;
+}
+
+.title-heading {
+  color: $text-color-light;
+  text-transform: uppercase;
+  text-shadow: 0 5px 10px rgba($color-dark,.4);
+  font-family: 'Josefin Sans', sans-serif;
+
+  &--main {
+    letter-spacing: 5px;
+    font-size: 60px;
+  }
+
+  &--sub {
+    letter-spacing: 5px;
+    font-size: 26px;
+    font-weight: $font-light;
+  }
+}
+
+.skill {
+  text-align: center;
+}
+
+.skills {
+  &-heading {
+    padding-bottom: 40px;
+
+    &__main {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: $font-heavy;
+      font-size: $font-size-xlarge;
+    }
+
+    &__sub {
+      font-size: $default-font-size;
+    }
+  }
+}
+
+.contact {
+  &-subHeading {
+    font-size: $font-size-med;
+  }
+
+  &-main {
+    font-size: $font-size-xlarge;
+  }
+}
+
+
+.portfolio-heading {
+  & h2 {
+    text-transform: uppercase;
+    font-size: $font-size-xlarge
+  }
+  text-align: center;
+  padding: 40px;
+  width: 100%;
+}

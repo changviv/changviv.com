@@ -1,0 +1,30 @@
+.slides {
+  &-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba($color-dark,.4)
+  }
+  
+  &-navigation {
+    & a.prev {
+      @include iconPosition;
+      left: 20px;
+      background-image: url("../img/icons/back.svg");
+    }
+
+    & a.next {
+      @include iconPosition;
+      right: 20px;
+      background-image: url("../img/icons/next1.svg");
+    }
+  }
+}
+
+.title {
+  @include absCenter;
+  height: 25rem;
+  z-index: 5;
+  text-align: center;
+}

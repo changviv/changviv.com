@@ -1,0 +1,24 @@
+{
+  "name": "vivienchang_portfolio",
+  "version": "1.0.0",
+  "description": "Vivien Chang Portfolio",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/main.css -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/changviv/portfolio.git"
+  },
+  "author": "Vivien Changvivienchang_resume",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/changviv/portfolio/issues"
+  },
+  "homepage": "https://github.com/changviv/portfolio#readme"
+}

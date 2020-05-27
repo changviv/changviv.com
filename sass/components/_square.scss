@@ -1,0 +1,54 @@
+.squareItem {
+  margin-top: 30px;
+  position: relative;
+}
+
+.squareContainer {
+  position: relative;
+  padding: 50px 15px 35px;
+  text-align: center;
+  border: 2px solid #444;
+  border-top: none;
+}
+
+/*Everything below makes the little gap
+at the top of the square contaner in skills
+*/
+.squareContainer:before,
+.squareContainer:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width:30%;
+  border-bottom: 2px solid $color-darkgrey;
+}
+
+.squareContainer:before {
+  right: 0;
+}
+
+.squareContainer:after {
+  left:0;
+}
+/*------------*/
+
+.squareContent h2 {
+  font-size: $font-square-large;
+  margin-bottom: 10px;
+  font-weight:400;
+  color: $color-primary;
+}
+
+.squareContent h3 {
+  font-size: $font-size-small;
+  font-weight:600;
+  margin: 0;
+}
+
+.squareIcon {
+  position: absolute;
+  top: -30px;
+  left: 33%;
+  width: 34%;
+  color: $color-darkgrey;
+}

@@ -37,7 +37,7 @@ $(document).ready(function() {
   })
 
 
-  var skillsOffTopSet = $('.skillSection').offset().top;
+  var skillsOffTopSet = $('.section-skill').offset().top;
   var statsOffTopSet = $('.statSection').offset().top;
   var countUpFinished = false
   
@@ -73,7 +73,7 @@ $(document).ready(function() {
 
   $('[data-fancybox]').fancybox();
 
-  $('.portfolio--container-items').isotope({
+  $('.portfolio-container-items').isotope({
     filter: '*',
     animationOptions: {
       duration: 1500,
@@ -87,7 +87,7 @@ $(document).ready(function() {
     $(this).addClass("current")
 
     var selector = $(this).attr('data-filter')
-    $('.portfolio--container-items').isotope({
+    $('.portfolio-container-items').isotope({
       filter: selector,
       animationOptions: {
         duration: 1500,
@@ -122,7 +122,7 @@ $(document).ready(function() {
       body.css("padding-top", nav.outerHeight() + "px")
       body.addClass("fixedNav");
     } else {
-      body.css("padding-top", 0)
+      body.css("padding-top", 0);
       body.removeClass("fixedNav");
     }
   };

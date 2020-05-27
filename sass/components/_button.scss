@@ -1,0 +1,29 @@
+.button {
+  padding: 15px 20px;
+  display: inline-block;
+  margin-top:20px;
+  border-radius: 2px;
+  font-size: $default-font-size;
+
+  &-contact {
+    color: $color-light;
+    border: 1px solid $color-light;
+
+    &:hover {
+      text-decoration: none;
+      color:$color-primary;
+      background-color: $color-light;
+    }
+  }
+
+  &-resume {
+    color: $color-primary;
+    border: 1px solid $color-primary;
+
+    &:hover {
+      text-decoration: none;
+      color:$color-light;
+      background-color: $color-primary;
+    }
+  }
+}
