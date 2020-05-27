@@ -1,3 +1,8 @@
 .socialItem {
   margin-right: 1.2rem;
+  color: $color-primary;
+  &:hover {
+    text-decoration: none;
+    color: $color-light;
+  }
 }
