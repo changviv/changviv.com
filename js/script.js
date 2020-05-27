@@ -2,6 +2,16 @@ $(window).on("load", function() {
   $(".loader .inner").fadeOut(1000, function() {
     $(".loader").fadeOut(1200)
   })
+
+
+  $('.portfolio-container-items').isotope({
+    filter: '*',
+    animationOptions: {
+      duration: 1500,
+      easing: 'linar',
+      queue: false
+    }
+  })
 })
 
 $(document).ready(function() {
@@ -78,15 +88,6 @@ $(document).ready(function() {
   });
 
   $('[data-fancybox]').fancybox();
-
-  $('.portfolio-container-items').isotope({
-    filter: '*',
-    animationOptions: {
-      duration: 1500,
-      easing: 'linar',
-      queue: false
-    }
-  })
 
   $("#filters a").click(function() {
     $("#filters .current").removeClass('current')
