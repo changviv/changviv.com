@@ -82,15 +82,15 @@ body {
     border: 1px solid #f4f4f6; }
     .button-contact:hover {
       text-decoration: none;
-      color: #e74c3c;
+      color: #d35400;
       background-color: #f4f4f6; }
   .button-resume {
-    color: #e74c3c;
-    border: 1px solid #e74c3c; }
+    color: #d35400;
+    border: 1px solid #d35400; }
     .button-resume:hover {
       text-decoration: none;
       color: #f4f4f6;
-      background-color: #e74c3c; }
+      background-color: #d35400; }
 
 .squareItem {
   margin-top: 30px;
@@ -125,7 +125,7 @@ at the top of the square contaner in skills
   font-size: 5.6rem;
   margin-bottom: 10px;
   font-weight: 400;
-  color: #e74c3c; }
+  color: #d35400; }
 
 .squareContent h3 {
   font-size: 1.4rem;
@@ -171,8 +171,8 @@ at the top of the square contaner in skills
     display: inline-block;
     padding: 5px; }
   .filter .current {
-    background-color: #e74c3c;
-    border: 1px solid #e74c3c;
+    background-color: #d35400;
+    border: 1px solid #d35400;
     color: #fff; }
 
 .slides-overlay {
@@ -215,7 +215,7 @@ at the top of the square contaner in skills
     margin: 0; }
 
 #navigation {
-  background-color: #e74c3c;
+  background-color: #d35400;
   padding: 20px 10px;
   z-index: 100;
   width: 100%; }
@@ -264,7 +264,7 @@ at the top of the square contaner in skills
     -ms-transition: all 0.2s linear, .3s; }
   .portfolio-container-items a {
     position: relative;
-    background-color: #e74c3c;
+    background-color: #d35400;
     display: inline-block;
     padding: 5px 7px;
     transition: all 0.2s linear, .2s;
@@ -326,7 +326,7 @@ at the top of the square contaner in skills
   .section-about__blurb-sub {
     font-size: 1.8rem; }
   .section-skill, .section-contact {
-    background-color: #e74c3c;
+    background-color: #d35400;
     color: #fff; }
 
 .chart {
